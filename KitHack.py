@@ -5,6 +5,8 @@
 #Facebook: https://facebook.com/adrian.guillermo.22
 #Github: https://github.com/AdrMXR
 
+from security import safe_command
+
 BLUE, RED, WHITE, CYAN, DEFAULT, YELLOW, MAGENTA, GREEN, END, BOLD = '\33[94m', '\033[91m', '\33[97m', '\033[36m', '\033[0m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[0m', '\033[1m'
 
 import sys
@@ -1747,7 +1749,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring icon change...{1}".format(GREEN, DEFAULT))
 						time.sleep(4)
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; icon']) 
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; icon']) 
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/payload -o output/kithack.apk')
@@ -1762,7 +1764,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -1804,7 +1806,7 @@ def main():
 							print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 							time.sleep(4)				 								
 							ext = mainout + '.apk'
-							subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+							safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 							print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 							break						
 						print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -1856,7 +1858,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -1903,7 +1905,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring RAT Payload...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)				
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; rat'])
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; rat'])
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/original -o output/kithack.apk')
@@ -1917,7 +1919,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -1994,7 +1996,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring icon change...{1}".format(GREEN, DEFAULT))
 						time.sleep(4)
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; icon']) 
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; icon']) 
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/payload -o output/kithack.apk')
@@ -2009,7 +2011,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -2051,7 +2053,7 @@ def main():
 							print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 							time.sleep(4)				 								
 							ext = mainout + '.apk'
-							subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+							safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 							print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 							break						
 						print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -2103,7 +2105,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -2150,7 +2152,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring RAT Payload...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)				
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; rat'])
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; rat'])
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/original -o output/kithack.apk')
@@ -2164,7 +2166,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -2240,7 +2242,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring icon change...{1}".format(GREEN, DEFAULT))
 						time.sleep(4)
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; icon']) 
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; icon']) 
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/payload -o output/kithack.apk')
@@ -2255,7 +2257,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -2297,7 +2299,7 @@ def main():
 							print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 							time.sleep(4)				 								
 							ext = mainout + '.apk'
-							subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+							safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 							print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 							break						
 						print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -2349,7 +2351,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -2396,7 +2398,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring RAT Payload...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)				
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; rat'])
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; rat'])
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/original -o output/kithack.apk')
@@ -2410,7 +2412,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -2486,7 +2488,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring icon change...{1}".format(GREEN, DEFAULT))
 						time.sleep(4)
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; icon']) 
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; icon']) 
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/payload -o output/kithack.apk')
@@ -2501,7 +2503,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -2543,7 +2545,7 @@ def main():
 							print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 							time.sleep(4)				 								
 							ext = mainout + '.apk'
-							subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+							safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 							print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 							break						
 						print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -2595,7 +2597,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -2642,7 +2644,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring RAT Payload...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)				
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; rat'])
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; rat'])
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/original -o output/kithack.apk')
@@ -2656,7 +2658,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -2732,7 +2734,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring icon change...{1}".format(GREEN, DEFAULT))
 						time.sleep(4)
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; icon']) 
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; icon']) 
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/payload -o output/kithack.apk')
@@ -2747,7 +2749,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -2789,7 +2791,7 @@ def main():
 							print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 							time.sleep(4)				 								
 							ext = mainout + '.apk'
-							subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+							safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 							print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 							break						
 						print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -2841,7 +2843,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -2888,7 +2890,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring RAT Payload...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)				
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; rat'])
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; rat'])
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/original -o output/kithack.apk')
@@ -2902,7 +2904,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -2978,7 +2980,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring icon change...{1}".format(GREEN, DEFAULT))
 						time.sleep(4)
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; icon']) 
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; icon']) 
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/payload -o output/kithack.apk')
@@ -2993,7 +2995,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -3035,7 +3037,7 @@ def main():
 							print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 							time.sleep(4)				 								
 							ext = mainout + '.apk'
-							subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+							safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 							print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 							break						
 						print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -3087,7 +3089,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -3134,7 +3136,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring RAT Payload...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)				
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; rat'])
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; rat'])
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/original -o output/kithack.apk')
@@ -3148,7 +3150,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -3224,7 +3226,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring icon change...{1}".format(GREEN, DEFAULT))
 						time.sleep(4)
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; icon']) 
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; icon']) 
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/payload -o output/kithack.apk')
@@ -3239,7 +3241,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
@@ -3281,7 +3283,7 @@ def main():
 							print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 							time.sleep(4)				 								
 							ext = mainout + '.apk'
-							subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+							safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 							print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 							break						
 						print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -3333,7 +3335,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[✔] Done.\n{1}Backdoor: {2}/output/{3}.apk".format(GREEN, DEFAULT, location, mainout))	
@@ -3380,7 +3382,7 @@ def main():
 						os.system('apktool d -f -o output/payload output/payload.apk')
 						print("\n{0}[*] Configuring RAT Payload...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)				
-						subprocess.Popen(['bash', '-c', '. lib/apkf.sh; rat'])
+						safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; rat'])
 						print("\n{0}[*] Compiling RAT APK...{1}".format(GREEN, DEFAULT))		
 						time.sleep(4)
 						os.system('apktool b output/original -o output/kithack.apk')
@@ -3394,7 +3396,7 @@ def main():
 								print("\n{0}[*] Generating persistence file...{1}".format(GREEN, DEFAULT))
 								time.sleep(4)				 								
 								ext = mainout + '.apk'
-								subprocess.Popen(['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
+								safe_command.run(subprocess.Popen, ['bash', '-c', '. lib/apkf.sh; pers output/' + ext])
 								print("{0}File: {1}/output/{2}.sh".format(DEFAULT, location, mainout))	
 								break							
 							print("\n{0}[*] Deleting temporary files...{1}".format(GREEN, DEFAULT))
