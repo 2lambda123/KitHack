@@ -23,6 +23,17 @@ from lib import kitools
 from lib.network import run_network
 
 def check_connection(host='https://www.google.com'):
+	"""Verifies internet connection and prints status.
+	Parameters:
+	- host (str): URL of host to check connection to. Default is 'https://www.google.com'.
+	Returns:
+	- None: No return value.
+	Processing Logic:
+	- Print status messages.
+	- Use requests library to make a GET request to specified host.
+	- If status code is 200, connection is successful.
+	- If not, print error message and exit."""
+	
 	print("{}Verificando su conexion a internet...".format(GREEN))
 	time.sleep(0.5)
 	try:
@@ -36,6 +47,19 @@ def check_connection(host='https://www.google.com'):
 		exit(0)
 
 def check_permissions():
+	"""Checks if the user has root permissions.
+	Parameters:
+	- None.
+	Returns:
+	- None.
+	Processing Logic:
+	- Checks if the user's UID is 0.
+	- If yes, calls the info() function.
+	- If no, clears the screen and prints a message about denied permissions.
+	- Exits the program.
+	Example:
+	check_permissions()"""
+	
 	if os.getuid() == 0:
 		info()
 	else:
@@ -44,6 +68,27 @@ def check_permissions():
 		exit(0)
 
 def info():
+	"""This function prints the author's information and social media links.
+	Parameters:
+	None
+	Returns:
+	None
+	Processing Logic:
+	- Clears the terminal screen.
+	- Prints the author's version number.
+	- Waits for 0.5 seconds.
+	- Prints the author's name.
+	- Waits for 0.5 seconds.
+	- Prints the author's GitHub link.
+	- Waits for 0.5 seconds.
+	- Prints the author's Facebook link.
+	- Waits for 0.5 seconds.
+	- Prints the author's Instagram link.
+	- Waits for 0.5 seconds.
+	- Prints the author's YouTube link.
+	- Waits for 2.5 seconds.
+	- Clears the terminal screen."""
+	
 	os.system('clear')
 	print("{0}[VERSION]:{1} 1.3.2\n\n".format(RED, DEFAULT))
 	time.sleep(0.5)
@@ -60,6 +105,8 @@ def info():
 	os.system('clear')
 
 def main():
+	""""""
+	
 	print(start_main_menu)
 	option = input("{0}KitHack >> {1}".format(RED, DEFAULT))
 	option = option.zfill(2)
